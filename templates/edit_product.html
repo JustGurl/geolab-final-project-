@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Product</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">Product Title</label>
+        <input type="text" name="title" id="title" value="{{ product.title }}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Product Description</label>
+        <textarea name="description" id="description" required>{{ product.description }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" step="0.01" name="price" id="price" value="{{ product.price }}" required>
+    </div>
+    <div class="form-group">
+        <label for="image">Current Image</label><br>
+        {% if product.image %}
+            <img src="{{ url_for('static', filename='uploads/' + product.image) }}" alt="Product Image" style="max-width: 200px;">
+        {% else %}
+            <p>No image available.</p>
+        {% endif %}
+        <label for="image">Upload New Image</label>
+        <input type="file" name="image" id="image" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Product</button>
+</form>
+
+<style>
+ /* Form Container */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #1F1F1F; /* Darker border for contrast */
+    border-radius: 8px;
+    background-color: #121212; /* Dark background for forms */
+    color: #E0E0E0; /* Light text color for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #BB86FC; /* Accent color for labels */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1F1F1F; /* Matches form background */
+    color: #E0E0E0; /* Light text */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #BB86FC; /* Highlighted border on focus */
+}
+
+/* Image Display */
+img {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Button Styles */
+button.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #BB86FC; /* Primary button color */
+    color: #121212; /* Contrast text for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.btn:hover {
+    background-color: #FF6E40; /* Hover color */
+    transform: scale(1.05); /* Subtle scaling */
+}
+
+button.btn:active {
+    transform: scale(0.95); /* Pressed effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    button.btn {
+        font-size: 14px;
+    }
+}
+
+</style>
+{% endblock %}

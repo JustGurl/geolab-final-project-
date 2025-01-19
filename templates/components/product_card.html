@@ -1,0 +1,8 @@
+<div class="product-card">
+    <img src="{{ url_for('static', filename='uploads/' + product.image) }}" alt="{{ product.title }}" class="product-image">
+    <h2>{{ product.title }}</h2>
+    <p>Price: ${{ product.price }}</p>
+    
+    <button class="buy-button" onclick="openPopup('{{ product.title }}', '{{ product.price }}', '{{ product.description }}')">Buy</button>
+</div>
+

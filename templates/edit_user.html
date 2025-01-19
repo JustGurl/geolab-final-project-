@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Edit User</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.username.label(class_="form-label") }}
+        {{ form.username(class_="form-control", placeholder="Enter new username") }}
+    </div>
+    <div class="form-group">
+        {{ form.email.label(class_="form-label") }}
+        {{ form.email(class_="form-control", placeholder="Enter new email") }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label(class_="form-label") }}
+        {{ form.password(class_="form-control", placeholder="Leave blank to keep current password") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Update User</button>
+</form>
+
+<style>
+    body {
+        background-color: #121212; /* Dark background */
+        color: #E0E0E0; /* Light text for readability */
+        font-family: Arial, sans-serif; /* Modern font */
+    }
+
+    h1 {
+        text-align: center;
+        color: #BB86FC; /* Accent color for the header */
+        margin-top: 20px;
+    }
+    
+    form {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #1F1F1F; /* Dark form background */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 5px;
+        color: #BB86FC; /* Highlight for labels */
+        font-weight: bold;
+    }
+    .form-control::placeholder{
+        color: #e0e0e059 !important;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #BB86FC; /* Focus color */
+        box-shadow: 0 0 5px #BB86FC;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        color: #121212;
+        background-color: #BB86FC; /* Button background */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #FF6E40; /* Hover effect */
+    }
+</style>
+
+{% endblock %}

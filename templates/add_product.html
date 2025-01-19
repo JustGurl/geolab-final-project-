@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add New Product</h1>
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.title.label(class_="form-label") }}
+        {{ form.title(class_="form-control", placeholder="Enter product title") }}
+    </div>
+    <div class="form-group">
+        {{ form.description.label(class_="form-label") }}
+        {{ form.description(class_="form-control", placeholder="Enter product description") }}
+    </div>
+    <div class="form-group">
+        {{ form.price.label(class_="form-label") }}
+        {{ form.price(class_="form-control", placeholder="Enter price") }}
+    </div>
+    <div class="form-group">
+        {{ form.image.label(class_="form-label") }}
+        {{ form.image(class_="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+
+<style>
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #1F1F1F; /* Darker border for contrast */
+    border-radius: 8px;
+    background-color: #121212; /* Dark background for forms */
+    color: #E0E0E0; /* Light text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #BB86FC; /* Accent color for labels */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1F1F1F; /* Matches form background */
+    color: #E0E0E0; /* Light text */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #BB86FC; /* Highlighted accent color on focus */
+}
+
+/* Button Styles */
+button.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #BB86FC; /* Primary button color */
+    color: #121212; /* Dark text for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.btn:hover {
+    background-color: #FF6E40; /* Hover color */
+    transform: scale(1.05); /* Subtle scale effect on hover */
+}
+
+button.btn:active {
+    transform: scale(0.95); /* Pressed effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    button.btn {
+        font-size: 14px;
+    }
+}
+</style>
+{% endblock %}

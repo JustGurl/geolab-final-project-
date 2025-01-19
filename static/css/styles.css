@@ -1,0 +1,163 @@
+:root{
+    --bs-body-bg:   #1F1F1F !important;
+}
+
+
+/* General Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background inspired by Renode's style */
+    color: #E0E0E0; /* Light text for better contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+   
+}
+h1{
+    width: fit-content;
+    margin: 20px auto;
+}
+/* Navigation Bar */
+nav {
+    background: #1F1F1F; /* Dark gray for the nav bar */
+    color: #E0E0E0;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #BB86FC; /* Accent color from Renode's palette */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FF6E40; /* A warmer hover effect */
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+    background-color: #1F1F1F; /* Card matches the nav bar */
+    border: 1px solid #BB86FC;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    font-size: 20px;
+    color: #BB86FC;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #B0B0B0;
+    margin: 10px 0;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+button,
+.details-button,
+.buy-button {
+    background-color: #BB86FC; /* Accent color */
+    color: #121212;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover,
+.details-button:hover,
+.buy-button:hover {
+    background-color: #FF6E40; /* Hover effect color */
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background: #1F1F1F; /* Dark background for popup */
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    color: #E0E0E0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #FF6E40; /* Accent color for close button */
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form-control::placeholder{
+    color: #e0e0e059 !important;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2C2C2C; /* Input field background */
+    color: #E0E0E0 !important;
+}
+
+
+.admin-row td:first-child::after {
+    content: "admin";
+    background-color: #BB86FC;
+    padding: 0.2rem 0.85rem;
+    border-radius: 5px ;
+    margin-left: 50px;
+    color: #121212;
+}
+
